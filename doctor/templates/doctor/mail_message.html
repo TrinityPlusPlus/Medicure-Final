@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+    
+    <head>
+        <!--bootstrap4 cdn-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- <img src="{% static 'assets/assets/img/logo.png' %}" height=45 width=130 style="display:block; margin-left:auto; margin-right:auto"> -->
+        <div style="margin:auto;width:50%">
+            <div style="background-color: #1AADA3; padding-top: 30px; padding-bottom: 30px;text-align: center; color:white;"><h1>Medicure</h1></div>
+            <br>
+            <p>Hi {{email}}</p>
+            <p>I have mentioned some of details of the prescription you must follow to get better.</p>
+            <!-- <strong style="color: #1AAD">[Order #{{ order_id }}]({{ date }})</strong> -->
+            <div class="cart" style="margin: 1rem 0px; font-size: 1.25rem; font-weight: 500;">
+                {% for prescription in prescriptions %}
+                    {{prescription}}
+                    <br>
+                {% endfor %}
+            </div>
+            
+            <p>Thanks for using Medicure services!!</p>
+            <p>Get Well Soon!!</p>
+            <p>Regards,</p>
+            <p style>Dr. {{ doctor.first_name }} {{ doctor.last_name }} </p>
+        </div>
+    </body>
+</html>
